@@ -8,9 +8,11 @@
 
 import UIKit
 import AVFoundation
+import RecordButton
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCapturePhotoCaptureDelegate {
 
+    @IBOutlet weak var photoOptionsView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var tempPhotoView: UIImageView!
     var captureSession : AVCaptureSession?
@@ -20,10 +22,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var photoSampleBuffer: CMSampleBuffer?
     var previewPhotoSampleBuffer: CMSampleBuffer?
-    
+
+    var recordButton = MyButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         createCaptureSession(forView: cameraView)
         // Do any additional setup after loading the view.
     }
@@ -43,12 +48,23 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        didPressTakeAnother()
+    
+    func recordButtonPressed(sender: UIButton){
+        takePhoto()
     }
     
     // initiating capture session
     func createCaptureSession(forView: UIView) {
+        
+        photoOptionsView.isHidden = true
+        
+        //load recordButton
+        recordButton = MyButton(frame: CGRect(x: self.view.frame.width/2 - 35, y: self.view.frame.height - 100, width: 70, height: 70))
+        recordButton.addTarget(self, action: #selector(recordButtonPressed(sender:)), for: .touchUpInside)
+        view.addSubview(recordButton)
+        recordButton.addTarget(self, action: #selector(record(sender:)), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(stop(sender:)), for: .touchUpInside)
+        
         captureSession = AVCaptureSession()
         captureSession?.addOutput(photoOutput)
         captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
@@ -99,6 +115,15 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    
+    @IBAction func cancelPhotoView(_ sender: UIButton) {
+        tempPhotoView.isHidden = true
+        recordButton.isHidden = false
+        photoOptionsView.isHidden = true
+        captureSession?.startRunning()
+    }
+    
+    
     //MARK: - AVCapturePhotoCaptureDelegate
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
@@ -111,9 +136,36 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: .right)
         
         self.tempPhotoView.image = image
+        self.recordButton.isHidden = true
         self.tempPhotoView.isHidden = false
+        self.photoOptionsView.isHidden = false
     }
     
+    //button timer
+    var progressTimer : Timer!
+    var progress : CGFloat! = 0
+    
+    func record(sender: UIButton) {
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+    }
+    
+    func updateProgress() {
+        
+        let maxDuration = CGFloat(5) // max duration of the recordButton
+        
+        progress = progress + (CGFloat(0.05) / maxDuration)
+        recordButton.setProgress(progress)
+        
+        if progress >= 1 {
+            progressTimer.invalidate()
+        }
+        
+    }
+    
+    func stop(sender: UIButton) {
+        self.progressTimer.invalidate()
+        progress = 0
+    }
     
     
 

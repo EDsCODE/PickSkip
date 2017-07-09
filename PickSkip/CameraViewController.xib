@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraViewController" customModule="PickSkip" customModuleProvider="target">
             <connections>
                 <outlet property="cameraView" destination="OMM-px-MdK" id="ZET-VJ-dIf"/>
+                <outlet property="photoOptionsView" destination="2TV-ZW-rhu" id="WeS-xR-Heg"/>
                 <outlet property="tempPhotoView" destination="0cd-BR-eMb" id="uuJ-pr-tc2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,6 +29,19 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-BR-eMb">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-ZW-rhu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRQ-gD-25t">
+                            <rect key="frame" x="8" y="16" width="52" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="cancelButton"/>
+                            <connections>
+                                <action selector="cancelPhotoView:" destination="-1" eventType="touchUpInside" id="845-nS-wkn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -36,10 +50,18 @@
                 <constraint firstItem="OMM-px-MdK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AwM-2f-8Df"/>
                 <constraint firstAttribute="bottom" secondItem="0cd-BR-eMb" secondAttribute="bottom" id="FrU-sI-nuk"/>
                 <constraint firstAttribute="trailing" secondItem="0cd-BR-eMb" secondAttribute="trailing" id="IGw-Tl-2rw"/>
+                <constraint firstItem="2TV-ZW-rhu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JJs-tS-TM0"/>
                 <constraint firstItem="0cd-BR-eMb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ntj-O9-0yB"/>
                 <constraint firstItem="OMM-px-MdK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PYT-BS-5qx"/>
                 <constraint firstAttribute="trailing" secondItem="OMM-px-MdK" secondAttribute="trailing" id="WNn-Mo-hGi"/>
+                <constraint firstAttribute="bottom" secondItem="2TV-ZW-rhu" secondAttribute="bottom" id="XC6-eF-cEL"/>
+                <constraint firstAttribute="trailing" secondItem="2TV-ZW-rhu" secondAttribute="trailing" id="i9I-SJ-ZNE"/>
+                <constraint firstItem="2TV-ZW-rhu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zcg-yr-6Qj"/>
             </constraints>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cancelButton" width="599" height="516"/>
+    </resources>
 </document>

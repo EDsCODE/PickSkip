@@ -12,10 +12,13 @@
 		1A14C2091F0F39AB00E91148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A14C2071F0F39AB00E91148 /* Main.storyboard */; };
 		1A14C20B1F0F39AB00E91148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A14C20A1F0F39AB00E91148 /* Assets.xcassets */; };
 		1A14C20E1F0F39AB00E91148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A14C20C1F0F39AB00E91148 /* LaunchScreen.storyboard */; };
+		1A27D2B91F1264DC00EA88BD /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27D2B81F1264DC00EA88BD /* MyButton.swift */; };
+		1A9264B91F1234BC00468A39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */; };
 		1AD14B6E1F0FBCAA00D0117E /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD14B6C1F0FBCAA00D0117E /* MessageListViewController.swift */; };
 		1AD14B6F1F0FBCAA00D0117E /* MessageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD14B6D1F0FBCAA00D0117E /* MessageListViewController.xib */; };
 		1AD14B741F0FBCF400D0117E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD14B721F0FBCF400D0117E /* CameraViewController.swift */; };
 		1AD14B751F0FBCF400D0117E /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD14B731F0FBCF400D0117E /* CameraViewController.xib */; };
+		21A84DA9DBEDC026E8CC51E5 /* Pods_PickSkip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4103E9470E1A864E06FC72 /* Pods_PickSkip.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +29,15 @@
 		1A14C20A1F0F39AB00E91148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A14C20D1F0F39AB00E91148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A14C20F1F0F39AB00E91148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A27D2B81F1264DC00EA88BD /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AD14B6C1F0FBCAA00D0117E /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		1AD14B6D1F0FBCAA00D0117E /* MessageListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListViewController.xib; sourceTree = "<group>"; };
 		1AD14B721F0FBCF400D0117E /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		1AD14B731F0FBCF400D0117E /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		41889A8F609DAECAD7C9CA46 /* Pods-PickSkip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickSkip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickSkip/Pods-PickSkip.debug.xcconfig"; sourceTree = "<group>"; };
+		794ECD2C517C19A116A23D84 /* Pods-PickSkip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickSkip.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickSkip/Pods-PickSkip.release.xcconfig"; sourceTree = "<group>"; };
+		BD4103E9470E1A864E06FC72 /* Pods_PickSkip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickSkip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A84DA9DBEDC026E8CC51E5 /* Pods_PickSkip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +57,8 @@
 			children = (
 				1A14C2021F0F39AB00E91148 /* PickSkip */,
 				1A14C2011F0F39AB00E91148 /* Products */,
+				3B1EB545FC8BEAB9D76B859C /* Pods */,
+				A5221299092D70D55378A30B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +83,27 @@
 				1AD14B6D1F0FBCAA00D0117E /* MessageListViewController.xib */,
 				1AD14B721F0FBCF400D0117E /* CameraViewController.swift */,
 				1AD14B731F0FBCF400D0117E /* CameraViewController.xib */,
+				1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */,
+				1A27D2B81F1264DC00EA88BD /* MyButton.swift */,
 			);
 			path = PickSkip;
+			sourceTree = "<group>";
+		};
+		3B1EB545FC8BEAB9D76B859C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41889A8F609DAECAD7C9CA46 /* Pods-PickSkip.debug.xcconfig */,
+				794ECD2C517C19A116A23D84 /* Pods-PickSkip.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5221299092D70D55378A30B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD4103E9470E1A864E06FC72 /* Pods_PickSkip.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A14C2121F0F39AB00E91148 /* Build configuration list for PBXNativeTarget "PickSkip" */;
 			buildPhases = (
+				30EA7C7BB50B2FA3E75CDD55 /* [CP] Check Pods Manifest.lock */,
 				1A14C1FC1F0F39AB00E91148 /* Sources */,
 				1A14C1FD1F0F39AB00E91148 /* Frameworks */,
 				1A14C1FE1F0F39AB00E91148 /* Resources */,
+				5CE9B8FA6D6F7D65ECF7817F /* [CP] Embed Pods Frameworks */,
+				F5B3999555172A069E9793E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,10 +173,59 @@
 				1AD14B6F1F0FBCAA00D0117E /* MessageListViewController.xib in Resources */,
 				1A14C2091F0F39AB00E91148 /* Main.storyboard in Resources */,
 				1AD14B751F0FBCF400D0117E /* CameraViewController.xib in Resources */,
+				1A9264B91F1234BC00468A39 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30EA7C7BB50B2FA3E75CDD55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5CE9B8FA6D6F7D65ECF7817F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickSkip/Pods-PickSkip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5B3999555172A069E9793E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickSkip/Pods-PickSkip-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A14C1FC1F0F39AB00E91148 /* Sources */ = {
@@ -152,6 +234,7 @@
 			files = (
 				1A14C2061F0F39AB00E91148 /* ViewController.swift in Sources */,
 				1AD14B741F0FBCF400D0117E /* CameraViewController.swift in Sources */,
+				1A27D2B91F1264DC00EA88BD /* MyButton.swift in Sources */,
 				1AD14B6E1F0FBCAA00D0117E /* MessageListViewController.swift in Sources */,
 				1A14C2041F0F39AB00E91148 /* AppDelegate.swift in Sources */,
 			);
@@ -276,6 +359,7 @@
 		};
 		1A14C2131F0F39AB00E91148 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41889A8F609DAECAD7C9CA46 /* Pods-PickSkip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7M5R54K5DJ;
@@ -289,6 +373,7 @@
 		};
 		1A14C2141F0F39AB00E91148 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 794ECD2C517C19A116A23D84 /* Pods-PickSkip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7M5R54K5DJ;
