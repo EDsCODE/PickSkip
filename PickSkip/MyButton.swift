@@ -52,6 +52,7 @@ class MyButton: UIButton {
     fileprivate var progressLayer: CAShapeLayer!
     fileprivate var gradientMaskLayer: CAGradientLayer!
     fileprivate var currentProgress: CGFloat! = 0
+    fileprivate var circleBorder2: CALayer!
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,10 +95,10 @@ class MyButton: UIButton {
         
         let startAngle: CGFloat = CGFloat(Double.pi) + CGFloat(Double.pi / 2)
         let endAngle: CGFloat = CGFloat(Double.pi) * 3 + CGFloat(Double.pi / 2)
-        let centerPoint: CGPoint = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
+        let centerPoint: CGPoint = CGPoint(x: self.frame.size.width / 2 + 15 , y: self.frame.size.height / 2 + 15)
         gradientMaskLayer = self.gradientMask()
         progressLayer = CAShapeLayer()
-        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: self.frame.size.width / 2 , startAngle: startAngle, endAngle: endAngle, clockwise: true).cgPath
+        progressLayer.path = UIBezierPath(arcCenter: centerPoint, radius: self.frame.size.width * 0.585 , startAngle: startAngle, endAngle: endAngle, clockwise: true).cgPath
         progressLayer.backgroundColor = UIColor.clear.cgColor
         progressLayer.fillColor = nil
         progressLayer.strokeColor = UIColor.black.cgColor
@@ -153,7 +154,8 @@ class MyButton: UIButton {
     
     func gradientMask() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.bounds
+        gradientLayer.frame = CGRect(x: -15, y: -15, width: self.bounds.width * 1.5, height: self.bounds.height * 1.5)
+//        gradientLayer.bounds = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         gradientLayer.locations = [0.0, 1.0]
         let topColor = progressColor
         let bottomColor = progressColor
