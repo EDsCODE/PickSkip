@@ -9,19 +9,24 @@
 import UIKit
 import AVFoundation
 import RecordButton
+import AVKit
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCapturePhotoCaptureDelegate {
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCapturePhotoCaptureDelegate, AVCaptureFileOutputRecordingDelegate {
 
     @IBOutlet weak var photoOptionsView: UIView!
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var tempPhotoView: UIImageView!
     var captureSession : AVCaptureSession?
+    var videoOutput = AVCaptureMovieFileOutput()
     var photoOutput = AVCapturePhotoOutput()
-    var backCameraInput : AVCaptureDeviceInput?
     var previewLayer : AVCaptureVideoPreviewLayer?
     
     var photoSampleBuffer: CMSampleBuffer?
     var previewPhotoSampleBuffer: CMSampleBuffer?
+    
+    var player: AVPlayer!
+    var playerLayer = AVPlayerLayer()
 
     var recordButton = MyButton()
     
@@ -45,12 +50,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-    }
-    
-    func recordButtonPressed(sender: UIButton){
-        takePhoto()
     }
     
     // initiating capture session
@@ -60,24 +59,31 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         //load recordButton
         recordButton = MyButton(frame: CGRect(x: self.view.frame.width/2 - 35, y: self.view.frame.height - 100, width: 70, height: 70))
-        recordButton.addTarget(self, action: #selector(recordButtonPressed(sender:)), for: .touchUpInside)
         view.addSubview(recordButton)
-        recordButton.addTarget(self, action: #selector(record(sender:)), for: .touchDown)
-        recordButton.addTarget(self, action: #selector(stop(sender:)), for: .touchUpInside)
+        let recordRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(didHoldRecordButton))
+        recordButton.addGestureRecognizer(recordRecognizer)
+        let photoRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapRecordButton))
+        recordButton.addGestureRecognizer(photoRecognizer)
+        
+        
         
         captureSession = AVCaptureSession()
         captureSession?.addOutput(photoOutput)
+        captureSession?.addOutput(videoOutput)
         captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
         
         let backCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back)
-        
+        let mic = AVCaptureDevice.defaultDevice(withDeviceType: .builtInMicrophone, mediaType: AVMediaTypeAudio, position: .front)
         do {
-            backCameraInput = try AVCaptureDeviceInput(device: backCamera)
+            let backCameraInput = try AVCaptureDeviceInput(device: backCamera)
             captureSession?.addInput(backCameraInput)
+            let micInput = try AVCaptureDeviceInput(device: mic)
+            captureSession?.addInput(micInput)
         }
         catch {
             print("Camera input error \(error)")
         }
+        
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
@@ -88,14 +94,29 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         
+        
         captureSession?.startRunning()
         
         
     }
+    
+    func didHoldRecordButton(gesture: UITapGestureRecognizer) {
+        if gesture.state == .began {
+            record()
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let filePath = documentsURL.appendingPathComponent("temp.mp4")
+            videoOutput.startRecording(toOutputFileURL: filePath, recordingDelegate: self)
+            print("Record")
+        } else if gesture.state == .ended {
+            stop()
+            videoOutput.stopRecording()
+            print("End Record")
+        }
+    }
 
     //capture and display photo
-    func takePhoto() {
-        print("hello 2")
+    func didTapRecordButton(gesture: UITapGestureRecognizer) {
+        print("Take Photo")
         let settings = AVCapturePhotoSettings()
         
         photoOutput.capturePhoto(with: settings, delegate: self)
@@ -104,7 +125,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var didTakePhoto = Bool()
     
-    func didPressTakeAnother() {
+    /*func didPressTakeAnother() {
         if didTakePhoto == true {
             tempPhotoView.isHidden = true
             didTakePhoto = false
@@ -113,13 +134,18 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             takePhoto()
             captureSession?.startRunning()
         }
-    }
+    }*/
     
     
     @IBAction func cancelPhotoView(_ sender: UIButton) {
         tempPhotoView.isHidden = true
+        videoView.isHidden = true
         recordButton.isHidden = false
         photoOptionsView.isHidden = true
+        cameraView.isHidden = false
+        if player != nil {
+            player.pause()
+        }
         captureSession?.startRunning()
     }
     
@@ -145,7 +171,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     var progressTimer : Timer!
     var progress : CGFloat! = 0
     
-    func record(sender: UIButton) {
+    func record() {
         self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
     }
     
@@ -162,10 +188,42 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
-    func stop(sender: UIButton) {
+    func stop() {
         self.progressTimer.invalidate()
         progress = 0
+        recordButton.setRecording(false)
+        recordButton.setProgress(progress)
     }
+    
+    public func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+        if error != nil {
+            print("ERROR RECORDING: \(error.localizedDescription)")
+        } else {
+            print("Saved to output file: \(outputFileURL)")
+            
+            player = AVPlayer(url: outputFileURL)
+            playerLayer.player = player
+            playerLayer.frame = self.tempPhotoView.bounds
+            playerLayer.backgroundColor = UIColor.clear.cgColor
+            playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
+            self.tempPhotoView.layer.addSublayer(playerLayer)
+            tempPhotoView.isHidden = false
+            photoOptionsView.isHidden = false
+            recordButton.isHidden = true
+            
+            player.play()
+            
+            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player.currentItem, queue: nil, using: { (_) in
+                DispatchQueue.main.async {
+                    self.player?.seek(to: kCMTimeZero)
+                    self.player?.play()
+                }
+            })
+            
+        }
+    }
+    
+    
     
     
 

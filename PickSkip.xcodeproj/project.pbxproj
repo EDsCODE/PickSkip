@@ -75,13 +75,13 @@
 			children = (
 				1A14C2031F0F39AB00E91148 /* AppDelegate.swift */,
 				1A14C2051F0F39AB00E91148 /* ViewController.swift */,
-				1A14C2071F0F39AB00E91148 /* Main.storyboard */,
 				1A14C20A1F0F39AB00E91148 /* Assets.xcassets */,
 				1A14C20C1F0F39AB00E91148 /* LaunchScreen.storyboard */,
 				1A14C20F1F0F39AB00E91148 /* Info.plist */,
 				1AD14B6C1F0FBCAA00D0117E /* MessageListViewController.swift */,
 				1AD14B6D1F0FBCAA00D0117E /* MessageListViewController.xib */,
 				1AD14B721F0FBCF400D0117E /* CameraViewController.swift */,
+				1A14C2071F0F39AB00E91148 /* Main.storyboard */,
 				1AD14B731F0FBCF400D0117E /* CameraViewController.xib */,
 				1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */,
 				1A27D2B81F1264DC00EA88BD /* MyButton.swift */,
@@ -140,7 +140,7 @@
 				TargetAttributes = {
 					1A14C1FF1F0F39AB00E91148 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 7M5R54K5DJ;
+						DevelopmentTeam = K2XB9K6AET;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -303,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -362,10 +362,11 @@
 			baseConfigurationReference = 41889A8F609DAECAD7C9CA46 /* Pods-PickSkip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7M5R54K5DJ;
+				DEVELOPMENT_TEAM = K2XB9K6AET;
 				INFOPLIST_FILE = PickSkip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = default.PickSkip;
+				PRODUCT_BUNDLE_IDENTIFIER = default.PickSkip.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -376,10 +377,11 @@
 			baseConfigurationReference = 794ECD2C517C19A116A23D84 /* Pods-PickSkip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7M5R54K5DJ;
+				DEVELOPMENT_TEAM = K2XB9K6AET;
 				INFOPLIST_FILE = PickSkip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = default.PickSkip;
+				PRODUCT_BUNDLE_IDENTIFIER = default.PickSkip.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
