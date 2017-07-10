@@ -36,6 +36,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>$(PickSkip) camera use</string>
+	<key>NSContactsUsageDescription</key>
+	<string>$(PickSkip) Contacts Use</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

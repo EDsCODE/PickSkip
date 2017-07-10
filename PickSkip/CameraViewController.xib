@@ -40,6 +40,14 @@
                                 <action selector="cancelPhotoView:" destination="-1" eventType="touchUpInside" id="845-nS-wkn"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXM-BW-Ezd">
+                            <rect key="frame" x="287" y="598" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="sendPhoto:" destination="-1" eventType="touchUpInside" id="80D-wq-WMn"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </view>
             </subviews>

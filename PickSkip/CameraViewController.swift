@@ -124,6 +124,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     
+    @IBAction func sendPhoto(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ContactView")
+        present(vc, animated: true, completion: {_ in} )
+    }
+    
+    
     //MARK: - AVCapturePhotoCaptureDelegate
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
