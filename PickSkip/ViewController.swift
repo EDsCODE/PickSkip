@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         self.pages.addSubview(cameraView.view)
         cameraView.didMove(toParentViewController: self)
         
+        
         var cameraFrame = cameraView.view.frame
         cameraFrame.origin.x = self.view.frame.width
         cameraView.view.frame = cameraFrame

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,6 +14,7 @@
                 <outlet property="cameraView" destination="OMM-px-MdK" id="ZET-VJ-dIf"/>
                 <outlet property="photoOptionsView" destination="2TV-ZW-rhu" id="WeS-xR-Heg"/>
                 <outlet property="tempPhotoView" destination="0cd-BR-eMb" id="uuJ-pr-tc2"/>
+                <outlet property="videoView" destination="2TV-ZW-rhu" id="aOc-4T-rd6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,6 +30,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-BR-eMb">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttp-kO-VuZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-ZW-rhu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
@@ -56,6 +61,7 @@
                 <constraint firstItem="0cd-BR-eMb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2Qz-lv-0kH"/>
                 <constraint firstAttribute="bottom" secondItem="OMM-px-MdK" secondAttribute="bottom" id="7Dl-T4-dyt"/>
                 <constraint firstItem="OMM-px-MdK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AwM-2f-8Df"/>
+                <constraint firstAttribute="trailing" secondItem="Ttp-kO-VuZ" secondAttribute="trailing" id="CxZ-qq-d6G"/>
                 <constraint firstAttribute="bottom" secondItem="0cd-BR-eMb" secondAttribute="bottom" id="FrU-sI-nuk"/>
                 <constraint firstAttribute="trailing" secondItem="0cd-BR-eMb" secondAttribute="trailing" id="IGw-Tl-2rw"/>
                 <constraint firstItem="2TV-ZW-rhu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JJs-tS-TM0"/>
@@ -63,7 +69,12 @@
                 <constraint firstItem="OMM-px-MdK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PYT-BS-5qx"/>
                 <constraint firstAttribute="trailing" secondItem="OMM-px-MdK" secondAttribute="trailing" id="WNn-Mo-hGi"/>
                 <constraint firstAttribute="bottom" secondItem="2TV-ZW-rhu" secondAttribute="bottom" id="XC6-eF-cEL"/>
+                <constraint firstItem="Ttp-kO-VuZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Xet-C4-jNp"/>
                 <constraint firstAttribute="trailing" secondItem="2TV-ZW-rhu" secondAttribute="trailing" id="i9I-SJ-ZNE"/>
+                <constraint firstItem="Ttp-kO-VuZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kej-Aj-6o8"/>
+                <constraint firstAttribute="bottom" secondItem="Ttp-kO-VuZ" secondAttribute="bottom" id="qsv-gf-rpb"/>
+                <constraint firstItem="Ttp-kO-VuZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rrm-mK-TiZ"/>
+                <constraint firstItem="Ttp-kO-VuZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yha-k2-11b"/>
                 <constraint firstItem="2TV-ZW-rhu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zcg-yr-6Qj"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="53.5"/>
