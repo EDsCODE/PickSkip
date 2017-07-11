@@ -13,6 +13,20 @@
 		1A14C20B1F0F39AB00E91148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A14C20A1F0F39AB00E91148 /* Assets.xcassets */; };
 		1A14C20E1F0F39AB00E91148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A14C20C1F0F39AB00E91148 /* LaunchScreen.storyboard */; };
 		1A27D2B91F1264DC00EA88BD /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27D2B81F1264DC00EA88BD /* MyButton.swift */; };
+		1A2BF6121F1504090067EBAC /* SendFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BF6111F1504090067EBAC /* SendFormView.swift */; };
+		1A2BF6141F15434A0067EBAC /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BF6131F15434A0067EBAC /* ComposeMessageViewController.swift */; };
+		1A2BF6151F1563EF0067EBAC /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6021F14F22C0067EBAC /* SF-Pro-Text-Bold.otf */; };
+		1A2BF6161F1563EF0067EBAC /* SF-Pro-Text-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6031F14F22C0067EBAC /* SF-Pro-Text-BoldItalic.otf */; };
+		1A2BF6171F1563EF0067EBAC /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6041F14F22C0067EBAC /* SF-Pro-Text-Heavy.otf */; };
+		1A2BF6181F1563EF0067EBAC /* SF-Pro-Text-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6051F14F22C0067EBAC /* SF-Pro-Text-HeavyItalic.otf */; };
+		1A2BF6191F1563EF0067EBAC /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6061F14F22C0067EBAC /* SF-Pro-Text-Light.otf */; };
+		1A2BF61A1F1563EF0067EBAC /* SF-Pro-Text-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6071F14F22C0067EBAC /* SF-Pro-Text-LightItalic.otf */; };
+		1A2BF61B1F1563EF0067EBAC /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6081F14F22C0067EBAC /* SF-Pro-Text-Medium.otf */; };
+		1A2BF61C1F1563EF0067EBAC /* SF-Pro-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF6091F14F22C0067EBAC /* SF-Pro-Text-MediumItalic.otf */; };
+		1A2BF61D1F1563EF0067EBAC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF60A1F14F22C0067EBAC /* SF-Pro-Text-Regular.otf */; };
+		1A2BF61E1F1563EF0067EBAC /* SF-Pro-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF60B1F14F22C0067EBAC /* SF-Pro-Text-RegularItalic.otf */; };
+		1A2BF61F1F1563EF0067EBAC /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF60C1F14F22C0067EBAC /* SF-Pro-Text-Semibold.otf */; };
+		1A2BF6201F1563EF0067EBAC /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2BF60D1F14F22C0067EBAC /* SF-Pro-Text-SemiboldItalic.otf */; };
 		1A8AA4DD1F12C69100CA0C7F /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AA4DC1F12C69100CA0C7F /* ContactsViewController.swift */; };
 		1A9032B91F13DD3B00B8279A /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9032B81F13DD3B00B8279A /* CameraViewController.xib */; };
 		1A9264B91F1234BC00468A39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */; };
@@ -31,6 +45,20 @@
 		1A14C20D1F0F39AB00E91148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A14C20F1F0F39AB00E91148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A27D2B81F1264DC00EA88BD /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		1A2BF6021F14F22C0067EBAC /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		1A2BF6031F14F22C0067EBAC /* SF-Pro-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-BoldItalic.otf"; sourceTree = "<group>"; };
+		1A2BF6041F14F22C0067EBAC /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
+		1A2BF6051F14F22C0067EBAC /* SF-Pro-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
+		1A2BF6061F14F22C0067EBAC /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		1A2BF6071F14F22C0067EBAC /* SF-Pro-Text-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-LightItalic.otf"; sourceTree = "<group>"; };
+		1A2BF6081F14F22C0067EBAC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		1A2BF6091F14F22C0067EBAC /* SF-Pro-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-MediumItalic.otf"; sourceTree = "<group>"; };
+		1A2BF60A1F14F22C0067EBAC /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		1A2BF60B1F14F22C0067EBAC /* SF-Pro-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-RegularItalic.otf"; sourceTree = "<group>"; };
+		1A2BF60C1F14F22C0067EBAC /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		1A2BF60D1F14F22C0067EBAC /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		1A2BF6111F1504090067EBAC /* SendFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFormView.swift; sourceTree = "<group>"; };
+		1A2BF6131F15434A0067EBAC /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		1A8AA4DC1F12C69100CA0C7F /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		1A9032B81F13DD3B00B8279A /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
 		1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -75,6 +103,8 @@
 		1A14C2021F0F39AB00E91148 /* PickSkip */ = {
 			isa = PBXGroup;
 			children = (
+				1A2BF6101F1503F30067EBAC /* Views */,
+				1A2BF60F1F14F26E0067EBAC /* Resources */,
 				1A14C2031F0F39AB00E91148 /* AppDelegate.swift */,
 				1A14C2051F0F39AB00E91148 /* ViewController.swift */,
 				1A14C20A1F0F39AB00E91148 /* Assets.xcassets */,
@@ -88,8 +118,36 @@
 				1A9264B81F1234BC00468A39 /* GoogleService-Info.plist */,
 				1A27D2B81F1264DC00EA88BD /* MyButton.swift */,
 				1A8AA4DC1F12C69100CA0C7F /* ContactsViewController.swift */,
+				1A2BF6131F15434A0067EBAC /* ComposeMessageViewController.swift */,
 			);
 			path = PickSkip;
+			sourceTree = "<group>";
+		};
+		1A2BF60F1F14F26E0067EBAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A2BF6021F14F22C0067EBAC /* SF-Pro-Text-Bold.otf */,
+				1A2BF6031F14F22C0067EBAC /* SF-Pro-Text-BoldItalic.otf */,
+				1A2BF6041F14F22C0067EBAC /* SF-Pro-Text-Heavy.otf */,
+				1A2BF6051F14F22C0067EBAC /* SF-Pro-Text-HeavyItalic.otf */,
+				1A2BF6061F14F22C0067EBAC /* SF-Pro-Text-Light.otf */,
+				1A2BF6071F14F22C0067EBAC /* SF-Pro-Text-LightItalic.otf */,
+				1A2BF6081F14F22C0067EBAC /* SF-Pro-Text-Medium.otf */,
+				1A2BF6091F14F22C0067EBAC /* SF-Pro-Text-MediumItalic.otf */,
+				1A2BF60A1F14F22C0067EBAC /* SF-Pro-Text-Regular.otf */,
+				1A2BF60B1F14F22C0067EBAC /* SF-Pro-Text-RegularItalic.otf */,
+				1A2BF60C1F14F22C0067EBAC /* SF-Pro-Text-Semibold.otf */,
+				1A2BF60D1F14F22C0067EBAC /* SF-Pro-Text-SemiboldItalic.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1A2BF6101F1503F30067EBAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A2BF6111F1504090067EBAC /* SendFormView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		3B1EB545FC8BEAB9D76B859C /* Pods */ = {
@@ -171,11 +229,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2BF61B1F1563EF0067EBAC /* SF-Pro-Text-Medium.otf in Resources */,
+				1A2BF6191F1563EF0067EBAC /* SF-Pro-Text-Light.otf in Resources */,
+				1A2BF61E1F1563EF0067EBAC /* SF-Pro-Text-RegularItalic.otf in Resources */,
 				1A9032B91F13DD3B00B8279A /* CameraViewController.xib in Resources */,
+				1A2BF6151F1563EF0067EBAC /* SF-Pro-Text-Bold.otf in Resources */,
 				1A14C20E1F0F39AB00E91148 /* LaunchScreen.storyboard in Resources */,
+				1A2BF6181F1563EF0067EBAC /* SF-Pro-Text-HeavyItalic.otf in Resources */,
+				1A2BF61D1F1563EF0067EBAC /* SF-Pro-Text-Regular.otf in Resources */,
+				1A2BF61F1F1563EF0067EBAC /* SF-Pro-Text-Semibold.otf in Resources */,
 				1A14C20B1F0F39AB00E91148 /* Assets.xcassets in Resources */,
+				1A2BF6201F1563EF0067EBAC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
+				1A2BF6171F1563EF0067EBAC /* SF-Pro-Text-Heavy.otf in Resources */,
+				1A2BF61C1F1563EF0067EBAC /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				1AD14B6F1F0FBCAA00D0117E /* MessageListViewController.xib in Resources */,
 				1A14C2091F0F39AB00E91148 /* Main.storyboard in Resources */,
+				1A2BF6161F1563EF0067EBAC /* SF-Pro-Text-BoldItalic.otf in Resources */,
+				1A2BF61A1F1563EF0067EBAC /* SF-Pro-Text-LightItalic.otf in Resources */,
 				1A9264B91F1234BC00468A39 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +308,10 @@
 				1A14C2061F0F39AB00E91148 /* ViewController.swift in Sources */,
 				1AD14B741F0FBCF400D0117E /* CameraViewController.swift in Sources */,
 				1A27D2B91F1264DC00EA88BD /* MyButton.swift in Sources */,
+				1A2BF6141F15434A0067EBAC /* ComposeMessageViewController.swift in Sources */,
 				1AD14B6E1F0FBCAA00D0117E /* MessageListViewController.swift in Sources */,
 				1A14C2041F0F39AB00E91148 /* AppDelegate.swift in Sources */,
+				1A2BF6121F1504090067EBAC /* SendFormView.swift in Sources */,
 				1A8AA4DD1F12C69100CA0C7F /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
