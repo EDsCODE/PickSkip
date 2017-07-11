@@ -146,6 +146,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         if player != nil {
             player.pause()
         }
+        playerLayer.removeFromSuperlayer()
         captureSession?.startRunning()
     }
     
