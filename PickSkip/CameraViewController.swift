@@ -30,6 +30,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     var recordButton = MyButton()
     
+    var backCameraInput: AVCaptureDeviceInput!
+    var frontCameraInput: AVCaptureDeviceInput!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,18 +67,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         recordButton.addGestureRecognizer(recordRecognizer)
         let photoRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapRecordButton))
         recordButton.addGestureRecognizer(photoRecognizer)
-        
+        let switchCameraRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapScreen))
+        switchCameraRecognizer.numberOfTapsRequired = 2
+        forView.addGestureRecognizer(switchCameraRecognizer)
         
         
         captureSession = AVCaptureSession()
         captureSession?.addOutput(photoOutput)
         captureSession?.addOutput(videoOutput)
-        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
+        captureSession?.sessionPreset = AVCaptureSessionPresetHigh
         
         let backCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back)
-        let mic = AVCaptureDevice.defaultDevice(withDeviceType: .builtInMicrophone, mediaType: AVMediaTypeAudio, position: .front)
+        let mic = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
+        let frontCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front)
         do {
-            let backCameraInput = try AVCaptureDeviceInput(device: backCamera)
+            backCameraInput = try AVCaptureDeviceInput(device: backCamera)
+            frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
             captureSession?.addInput(backCameraInput)
             let micInput = try AVCaptureDeviceInput(device: mic)
             captureSession?.addInput(micInput)
@@ -121,6 +128,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         photoOutput.capturePhoto(with: settings, delegate: self)
         
+    }
+    
+    func didDoubleTapScreen(gesture: UITapGestureRecognizer) {
+        print("Double tap screen")
+        let inputs = captureSession?.inputs as! [AVCaptureDeviceInput]
+        self.captureSession?.beginConfiguration()
+        if inputs.contains(backCameraInput) {
+            captureSession?.removeInput(backCameraInput)
+            captureSession?.addInput(frontCameraInput)
+        } else if inputs.contains(frontCameraInput) {
+            captureSession?.removeInput(frontCameraInput)
+            captureSession?.addInput(backCameraInput)
+        } else {
+            print("No camera found?")
+        }
+        captureSession?.commitConfiguration()
     }
     
     var didTakePhoto = Bool()
